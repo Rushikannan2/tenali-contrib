@@ -436,17 +436,6 @@
       "count": 1
     }
   },
-  "src/vachana/exercises/SchemaClassifier.jsx": {
-    "no-empty": {
-      "count": 2
-    },
-    "no-unused-vars": {
-      "count": 14
-    },
-    "react-hooks/set-state-in-effect": {
-      "count": 2
-    }
-  },
   "src/vachana/exercises/SyntacticRewriter.jsx": {
     "no-empty": {
       "count": 10
