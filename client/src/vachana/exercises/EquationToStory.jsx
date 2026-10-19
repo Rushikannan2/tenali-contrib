@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 
 // ─── Question Bank ───────────────────────────────────────────────────────────
 // 6 modules: Direct Match, Similar Stories, Missing Info, Brackets, Both Sides, Mixed Challenge
@@ -1930,6 +1930,14 @@ export default function EquationToStory() {
   const [confetti, setConfetti] = useState([]);
   const timerRef = useRef(null);
   const floatIdSeq = useRef(0);
+
+  // Stop the level interval if the exercise unmounts while a timer is running
+  // (e.g. leaving via "All Modules" mid-level).
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
 
   // Step 2 & Step 3 interaction state
   const dragValRef = useRef(null);
