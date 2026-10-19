@@ -353,7 +353,7 @@ export default function SchemaClassifier() {
     const handlePopState = () => {
       const targetLevel = getLevelFromPath();
       if (targetLevel !== null && targetLevel !== 0 && targetLevel > progress.unlockedLevel && !progress.completedLevels.includes(targetLevel - 1)) {
-        navigateToLevel(0, true);
+        navigateToLevel(null, true);
       } else {
         setActiveLevel(targetLevel);
         resetLevelState();
